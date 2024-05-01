@@ -1,0 +1,2 @@
+folder_name/** filter=lfs diff=lfs merge=lfs -text
+.folder filter=lfs diff=lfs merge=lfs -text
