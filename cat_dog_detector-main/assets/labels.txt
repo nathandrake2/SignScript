@@ -1,0 +1,16 @@
+0 Burger
+1 Play
+2 Buy
+3 You
+4 Nothing
+5 Want
+6 Help
+7 Meet
+8 Nice
+9 To
+10 I
+11 With
+12 Love
+13 Like
+14 Go
+15 Home

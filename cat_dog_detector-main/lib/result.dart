@@ -19,7 +19,6 @@ class ResultPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
         title: const Text(
           'Classification Result',
           style: TextStyle(
@@ -40,17 +39,19 @@ class ResultPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                width: 300.0,
+                width: 300.0, 
                 height: 300.0,
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: Colors.blueGrey,
-                    width: 2.0,
+                    width: 2.0, 
                   ),
-                  borderRadius: BorderRadius.circular(12.0),
+                  borderRadius:
+                      BorderRadius.circular(12.0), 
                 ),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12.0),
+                  borderRadius: BorderRadius.circular(
+                      12.0), 
                   child: Image.file(
                     image,
                     fit: BoxFit.cover, // Ensures the image covers the container
@@ -75,49 +76,30 @@ class ResultPage extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            Container(
-              height: 60,
-              width: 300,
-              child: ElevatedButton(
-                  style: ButtonStyle(
-                      overlayColor: MaterialStateProperty.all(
-                          Theme.of(context).primaryColor),
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.black38)),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: const Text('Back to Home',
-                      style: TextStyle(
-                          fontFamily: 'SofiaSans',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 22,
-                          color: Colors.white))),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 20),
+                alignment: Alignment.center,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 18),
+                decoration: BoxDecoration(
+                  color: Colors.blueGrey,
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: const Text(
+                  'Back to Home',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'SofiaSans'),
+                ),
+              ),
             ),
-            // GestureDetector(
-            //   onTap: () {
-            //     Navigator.of(context).pop();
-            //   },
-            //   child: Container(
-            //     margin: const EdgeInsets.symmetric(horizontal: 20),
-            //     alignment: Alignment.center,
-            //     padding:
-            //         const EdgeInsets.symmetric(horizontal: 10, vertical: 18),
-            //     decoration: BoxDecoration(
-            //       color: Colors.blueGrey,
-            //       borderRadius: BorderRadius.circular(6),
-            //     ),
-            //     child: const Text(
-            //       'Back to Home',
-            //       textAlign: TextAlign.center,
-            //       style: TextStyle(
-            //           color: Colors.white,
-            //           fontSize: 22,
-            //           fontWeight: FontWeight.bold,
-            //           fontFamily: 'SofiaSans'),
-            //     ),
-            //   ),
-            // ),
           ],
         ),
       ),
